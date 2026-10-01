@@ -72,6 +72,6 @@
   },
   "dependencies": {
     "@narumitw/pi-tui-kit": "^0.49.1",
-    "@narumitw/pi-accounts": "git+ssh://gitea/joe/pi-accounts.git#main"
+    "@narumitw/pi-accounts": "git+ssh://gitea/joe/pi-accounts.git#59ab24cfc8af082bfa3c6e5dcc15b743c9c71de1"
   }
 }
