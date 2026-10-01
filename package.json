@@ -40,7 +40,8 @@
   ],
   "pi": {
     "extensions": [
-      "./dist/index.ts"
+      "./src/index.ts",
+      "./src/accounts-usage-integration/index.ts"
     ]
   },
   "scripts": {
