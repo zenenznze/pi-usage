@@ -1,6 +1,5 @@
 import assert from "node:assert/strict";
 import { test, vi } from "vitest";
-import { createMockContext } from "../../../test/support.js";
 import type { UsageReport } from "../src/index.js";
 import {
 	awaitWithDeadline,
@@ -13,6 +12,7 @@ import {
 	sanitizeDisplayText,
 	UsageCache,
 } from "../src/index.js";
+import { createMockContext } from "./support.js";
 
 const report: UsageReport = {
 	providerId: "openrouter",

@@ -1,6 +1,5 @@
 import assert from "node:assert/strict";
 import { test, vi } from "vitest";
-import { createMockContext } from "../../../test/support.js";
 import {
 	formatUsageReport,
 	formatUsageStatusline,
@@ -9,6 +8,7 @@ import {
 	resolveUsageAuth,
 	SUPPORTED_ADAPTERS,
 } from "../src/index.js";
+import { createMockContext } from "./support.js";
 
 const ZAI_QUOTA_PAYLOAD = {
 	code: 200,

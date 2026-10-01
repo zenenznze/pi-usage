@@ -1,6 +1,5 @@
 import assert from "node:assert/strict";
 import { test, vi } from "vitest";
-import { createMockContext } from "../../../test/support.js";
 import {
 	formatUsageReport,
 	formatUsageStatusline,
@@ -11,6 +10,7 @@ import {
 	SUPPORTED_ADAPTERS,
 	type UsageProviderAdapter,
 } from "../src/index.js";
+import { createMockContext } from "./support.js";
 
 const BASETEN_MODEL = {
 	id: "zai-org/GLM-5.2",

@@ -1,6 +1,5 @@
 import assert from "node:assert/strict";
 import { test } from "vitest";
-import { createMockContext } from "../../../test/support.js";
 import { formatCodexResetOutcome } from "../src/codex-resets.js";
 import {
 	consumeCodexResetCredit,
@@ -9,6 +8,7 @@ import {
 	type ResolvedUsageAuth,
 	resolveCodexResetAuth,
 } from "../src/index.js";
+import { createMockContext } from "./support.js";
 
 const activeCodexToken = codexAccessToken("account-123");
 

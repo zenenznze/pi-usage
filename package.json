@@ -1,77 +1,78 @@
 {
-  "name": "@narumitw/pi-usage",
-  "version": "0.59.0",
-  "description": "Self-hosted Pi usage plugin and accounts integration.",
-  "type": "module",
-  "license": "MIT",
-  "private": false,
-  "keywords": [
-    "pi-package",
-    "pi-extension",
-    "pi",
-    "usage",
-    "quota",
-    "balance",
-    "deepseek",
-    "fireworks",
-    "baseten",
-    "vercel-ai-gateway",
-    "codex",
-    "kimi",
-    "kimi-coding",
-    "moonshot",
-    "moonshotai",
-    "minimax",
-    "token-plan",
-    "copilot",
-    "openrouter",
-    "opencode",
-    "zen",
-    "zai",
-    "glm",
-    "xai",
-    "grok"
-  ],
-  "files": [
-    "src",
-    "dist",
-    "README.md",
-    "LICENSE"
-  ],
-  "pi": {
-    "extensions": [
-      "./src/index.ts",
-      "./src/accounts-usage-integration/index.ts"
-    ]
-  },
-  "scripts": {
-    "build": "node scripts/build-runtime.mjs",
-    "check": "npm run build && biome check --vcs-use-ignore-file=false src test scripts package.json tsconfig.json README.md && npm run typecheck",
-    "format": "biome check --write --vcs-use-ignore-file=false src test scripts package.json tsconfig.json README.md",
-    "typecheck": "tsc --noEmit",
-    "prepack": "npm run build"
-  },
-  "peerDependencies": {
-    "@earendil-works/pi-ai": "*",
-    "@earendil-works/pi-coding-agent": "*",
-    "@earendil-works/pi-tui": "*"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "2.5.11",
-    "@earendil-works/pi-ai": "0.84.4",
-    "@earendil-works/pi-coding-agent": "0.84.4",
-    "@earendil-works/pi-tui": "0.84.4",
-    "@types/node": "26.4.0",
-    "esbuild": "0.28.2",
-    "typescript": "7.0.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "ssh://gitea/joe/pi-extensions.git",
-    "directory": "packages/pi-usage"
-  },
-  "dependencies": {
-    "@narumitw/pi-tui-kit": "^0.49.1",
-    "@narumitw/pi-accounts": "git+ssh://gitea/joe/pi-accounts.git#59ab24cfc8af082bfa3c6e5dcc15b743c9c71de1"
-  }
+	"name": "@narumitw/pi-usage",
+	"version": "0.59.0",
+	"description": "Self-hosted Pi usage plugin and accounts integration.",
+	"type": "module",
+	"license": "MIT",
+	"private": false,
+	"keywords": [
+		"pi-package",
+		"pi-extension",
+		"pi",
+		"usage",
+		"quota",
+		"balance",
+		"deepseek",
+		"fireworks",
+		"baseten",
+		"vercel-ai-gateway",
+		"codex",
+		"kimi",
+		"kimi-coding",
+		"moonshot",
+		"moonshotai",
+		"minimax",
+		"token-plan",
+		"copilot",
+		"openrouter",
+		"opencode",
+		"zen",
+		"zai",
+		"glm",
+		"xai",
+		"grok"
+	],
+	"files": [
+		"src",
+		"dist",
+		"README.md",
+		"LICENSE"
+	],
+	"pi": {
+		"extensions": [
+			"./src/index.ts",
+			"./src/accounts-usage-integration/index.ts"
+		]
+	},
+	"scripts": {
+		"build": "node scripts/build-runtime.mjs",
+		"check": "npm run build && biome check --vcs-use-ignore-file=false src test scripts package.json tsconfig.json README.md && npm run typecheck",
+		"format": "biome check --write --vcs-use-ignore-file=false src test scripts package.json tsconfig.json README.md",
+		"typecheck": "tsc --noEmit",
+		"prepack": "npm run build",
+		"test": "vitest run"
+	},
+	"peerDependencies": {
+		"@earendil-works/pi-ai": "*",
+		"@earendil-works/pi-coding-agent": "*",
+		"@earendil-works/pi-tui": "*"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.5.11",
+		"@earendil-works/pi-ai": "0.84.4",
+		"@earendil-works/pi-coding-agent": "0.84.4",
+		"@earendil-works/pi-tui": "0.84.4",
+		"@types/node": "26.4.0",
+		"esbuild": "0.28.2",
+		"typescript": "7.0.2",
+		"vitest": "^4.1.11"
+	},
+	"repository": {
+		"type": "git",
+		"url": "ssh://gitea/joe/pi-usage.git"
+	},
+	"dependencies": {
+		"@narumitw/pi-accounts": "git+ssh://gitea/joe/pi-accounts.git#9be25529d1abb727967fff173747058d893106bd",
+		"@narumitw/pi-tui-kit": "^0.49.1"
+	}
 }

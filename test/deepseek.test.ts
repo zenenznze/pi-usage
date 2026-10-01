@@ -1,6 +1,5 @@
 import assert from "node:assert/strict";
 import { test, vi } from "vitest";
-import { createMockContext } from "../../../test/support.js";
 import {
 	type DeepSeekBalancePayload,
 	formatUsageReport,
@@ -12,6 +11,7 @@ import {
 	SUPPORTED_ADAPTERS,
 	type UsageProviderAdapter,
 } from "../src/index.js";
+import { createMockContext } from "./support.js";
 
 const DEEPSEEK_MODEL = {
 	id: "deepseek-v4-pro",

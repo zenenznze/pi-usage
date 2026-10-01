@@ -1,8 +1,8 @@
 import assert from "node:assert/strict";
 import { test } from "vitest";
-import { createMockContext, createMockPi } from "../../../test/support.js";
 import type { UsageSettingsRuntime, UsageSettingsState } from "../src/settings.js";
 import usageExtension from "../src/usage.js";
+import { createMockContext, createMockPi } from "./support.js";
 
 const codexModel = {
 	id: "gpt-5.4",

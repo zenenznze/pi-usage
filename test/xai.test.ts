@@ -2,7 +2,6 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { afterEach, test } from "vitest";
-import { createMockContext } from "../../../test/support.js";
 import { formatUsageReport, formatUsageStatusline } from "../src/format.js";
 import { normalizeXaiBillingPayload } from "../src/providers/xai.js";
 import {
@@ -12,6 +11,7 @@ import {
 	XAI_ADAPTER,
 } from "../src/query.js";
 import type { ResolvedUsageAuth, XaiBillingPayload, XaiUserPayload } from "../src/types.js";
+import { createMockContext } from "./support.js";
 
 const originalFetch = globalThis.fetch;
 afterEach(() => {

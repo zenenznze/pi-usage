@@ -3,8 +3,8 @@ import { initTheme } from "@earendil-works/pi-coding-agent";
 import { visibleWidth } from "@earendil-works/pi-tui";
 import { createTuiHarness } from "@narumitw/pi-tui-kit/testing";
 import { test } from "vitest";
-import { createMockContext, createMockPi } from "../../../test/support.js";
 import usageExtension from "../src/usage.js";
+import { createMockContext, createMockPi } from "./support.js";
 
 initTheme("dark", false);
 

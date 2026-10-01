@@ -1,11 +1,11 @@
 import assert from "node:assert/strict";
 import { test } from "vitest";
-import { createMockContext, createMockPi } from "../../../test/support.js";
 import {
 	collectOAuthCredentialCandidates,
 	createOAuthCredentialCandidateReader,
 	OAUTH_CREDENTIAL_SOURCE_CHANNEL,
 } from "../src/oauth-credential-source.js";
+import { createMockContext, createMockPi } from "./support.js";
 
 const credential = (suffix: string) => ({
 	type: "oauth" as const,
