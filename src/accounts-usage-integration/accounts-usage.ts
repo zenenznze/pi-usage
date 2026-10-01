@@ -101,12 +101,9 @@ async function importFirst<T>(specifiers: string[]): Promise<T> {
 }
 
 function loadUsageModule(): Promise<UsageAdapterModule> {
-	usageModulePromise ??= importFirst<UsageAdapterModule>([
-		pathToFileURL(join(getAgentDir(), "npm/node_modules/@narumitw/pi-usage/src/index.ts")).href,
-		pathToFileURL(join(getAgentDir(), "npm/node_modules/@narumitw/pi-usage/dist/index.ts")).href,
-		"@narumitw/pi-usage/src/index.ts",
-		"@narumitw/pi-usage/dist/index.ts",
-	]);
+	// This integration ships inside pi-usage. Resolve its own query module
+	// relative to this file so Git/local installs do not require an npm copy.
+	usageModulePromise ??= import("../query.js");
 	return usageModulePromise;
 }
 
