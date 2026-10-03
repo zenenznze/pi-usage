@@ -1,5 +1,5 @@
 {
-	"name": "@zenenznze/pi-usage",
+	"name": "@leo_aifirst/pi-usage",
 	"version": "1.0.0",
 	"description": "Self-hosted Pi usage plugin and accounts integration.",
 	"type": "module",

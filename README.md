@@ -2,7 +2,7 @@
 
 Maintained fork: https://github.com/zenenznze/pi-usage. Original MIT attribution is retained.
 
-npm package: `@zenenznze/pi-usage` (1.0.0 preparation; publish before installing). [![Pi extension](https://img.shields.io/badge/Pi-extension-blue)](https://pi.dev) [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
+npm package: `@leo_aifirst/pi-usage` (1.0.0 preparation; publish before installing). [![Pi extension](https://img.shields.io/badge/Pi-extension-blue)](https://pi.dev) [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
 
 Inspect usage and DeepSeek API balance for Pi's active provider account, query other configured providers, and toggle Fast mode for supported OpenAI Codex models.
 
@@ -38,7 +38,7 @@ Like every Pi extension, this package runs with Pi's process permissions.
 Review [Security and privacy](#-security-and-privacy) before installation.
 
 ```bash
-pi install npm:@zenenznze/pi-usage@1.0.0
+pi install npm:@leo_aifirst/pi-usage@1.0.0
 ```
 
 Do not load this fork alongside the upstream usage plugin.
@@ -46,7 +46,7 @@ Do not load this fork alongside the upstream usage plugin.
 Try without installing permanently:
 
 ```bash
-pi -e npm:@zenenznze/pi-usage@1.0.0
+pi -e npm:@leo_aifirst/pi-usage@1.0.0
 ```
 
 Build and try this package locally from the repository root:
@@ -403,7 +403,7 @@ Without such an owner, `pi-usage` retains its standalone Pi `auth.json` behavior
 An older or incompatible owner degrades to the existing authentication-unavailable result when the stored login does not match runtime auth.
 After the active runtime credential changes, the next command, turn, or scheduled refresh resolves auth again and cannot reuse another account's cached report.
 
-When our separately installed `@zenenznze/pi-accounts` has an active named OpenAI Codex account, this
+When our separately installed `@leo_aifirst/pi-accounts` has an active named OpenAI Codex account, this
 maintained fork resolves that account's stored OAuth credential for Codex usage
 reset authentication. It falls back to Pi's native `/login` credential when the
 account manager is unavailable or the provider is set to `default`. The runtime
@@ -433,7 +433,7 @@ To migrate one installation:
 
 ```bash
 pi remove npm:@narumitw/pi-codex-usage
-pi install npm:@zenenznze/pi-usage@1.0.0
+pi install npm:@leo_aifirst/pi-usage@1.0.0
 ```
 
 Remove the deprecated package rather than loading both usage extensions together.
