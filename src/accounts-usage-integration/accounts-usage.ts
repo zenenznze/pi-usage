@@ -3,11 +3,12 @@
 // @narumitw/pi-usage installed. Account selection is persisted through AccountStore;
 // pi-accounts applies it before the next Codex request.
 
+import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { pathToFileURL } from "node:url";
 import type { ExtensionAPI, ExtensionCommandContext, Theme } from "@earendil-works/pi-coding-agent";
 import { getAgentDir } from "@earendil-works/pi-coding-agent";
 import { Key, matchesKey, truncateToWidth, visibleWidth } from "@earendil-works/pi-tui";
+import { accountsModuleSpecifiers } from "./accounts-location.js";
 
 const CODEX_PROVIDER = "openai-codex";
 const QUERY_TIMEOUT_MS = 15_000;
@@ -108,14 +109,16 @@ function loadUsageModule(): Promise<UsageAdapterModule> {
 }
 
 function loadAccountsModule(): Promise<AccountsModule> {
-	accountsModulePromise ??= importFirst<AccountsModule>([
-		pathToFileURL(
-			join(getAgentDir(), "npm/node_modules/@narumitw/pi-accounts/src/account-store.ts"),
-		).href,
-		pathToFileURL(join(getAgentDir(), "npm/node_modules/@narumitw/pi-accounts/dist/index.ts")).href,
-		"@narumitw/pi-accounts/src/account-store.ts",
-		"@narumitw/pi-accounts/dist/index.ts",
-	]);
+	if (!accountsModulePromise) {
+		const agentDir = getAgentDir();
+		const settings = JSON.parse(readFileSync(join(agentDir, "settings.json"), "utf8"));
+		const specifiers = accountsModuleSpecifiers(agentDir, settings.packages ?? []);
+		if (specifiers.length === 0)
+			throw new Error(
+				"Install the managed pi-accounts plugin in Pi before opening /accounts-usage.",
+			);
+		accountsModulePromise = importFirst<AccountsModule>(specifiers);
+	}
 	return accountsModulePromise;
 }
 

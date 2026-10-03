@@ -72,7 +72,6 @@
 		"url": "ssh://gitea/joe/pi-usage.git"
 	},
 	"dependencies": {
-		"@narumitw/pi-accounts": "git+ssh://gitea/joe/pi-accounts.git#9be25529d1abb727967fff173747058d893106bd",
 		"@narumitw/pi-tui-kit": "^0.49.1"
 	}
 }
